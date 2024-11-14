@@ -12,147 +12,147 @@
         },
         {
             "type": "java",
-            "name": "HelloWorld",
+            "name": "chapter-01",
             "request": "launch",
             "mainClass": "org.lwjglb.HelloWorld",
             "projectName": "chapter-01"
         },
         {
             "type": "java",
-            "name": "Main",
+            "name": "chapter-02",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-02"
         },
         {
             "type": "java",
-            "name": "Main(1)",
+            "name": "chapter-03",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-03"
         },
         {
             "type": "java",
-            "name": "Main(2)",
+            "name": "chapter-04",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-04"
         },
         {
             "type": "java",
-            "name": "Main(3)",
+            "name": "chapter-05",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-05"
         },
         {
             "type": "java",
-            "name": "Main(4)",
+            "name": "chapter-06",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-06"
         },
         {
             "type": "java",
-            "name": "Main(5)",
+            "name": "chapter-07",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-07"
         },
         {
             "type": "java",
-            "name": "Main(6)",
+            "name": "chapter-08",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-08"
         },
         {
             "type": "java",
-            "name": "Main(7)",
+            "name": "chapter-09",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-09"
         },
         {
             "type": "java",
-            "name": "Main(8)",
+            "name": "chapter-10",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-10"
         },
         {
             "type": "java",
-            "name": "Main(9)",
+            "name": "chapter-11",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-11"
         },
         {
             "type": "java",
-            "name": "Main(10)",
+            "name": "chapter-12",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-12"
         },
         {
             "type": "java",
-            "name": "Main(11)",
+            "name": "chapter-13",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-13"
         },
         {
             "type": "java",
-            "name": "Main(12)",
+            "name": "chapter-14",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-14"
         },
         {
             "type": "java",
-            "name": "Main(13)",
+            "name": "chapter-15",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-15"
         },
         {
             "type": "java",
-            "name": "Main(14)",
+            "name": "chapter-16",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-16"
         },
         {
             "type": "java",
-            "name": "Main(15)",
+            "name": "chapter-17",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-17"
         },
         {
             "type": "java",
-            "name": "Main(16)",
+            "name": "chapter-18",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-18"
         },
         {
             "type": "java",
-            "name": "Main(17)",
+            "name": "chapter-19",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-19"
         },
         {
             "type": "java",
-            "name": "Main(18)",
+            "name": "chapter-20",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-20"
         },
         {
             "type": "java",
-            "name": "Main(19)",
+            "name": "chapter-21",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-21"
