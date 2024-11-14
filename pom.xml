@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 프로젝트 정보 -->
     <groupId>org.lwjglb</groupId>
     <artifactId>book</artifactId>
     <version>1.0</version>
+
+    <!-- 패키징 정보 -->
     <packaging>pom</packaging>
 
     <build>
+        <!-- 플러그인 목록 -->
         <plugins>
+            <!-- maven-compiler-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -20,6 +26,7 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
+            <!-- maven-dependency-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -40,6 +47,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- maven-resources-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -63,7 +71,8 @@
                     </execution>
                 </executions>
             </plugin>
-                <plugin>
+            <!-- exec-maven-plugin -->
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>${exec-maven-plugin.version}</version>
@@ -71,6 +80,7 @@
                     <mainClass>${main.class}</mainClass>
                 </configuration>
             </plugin>
+            <!-- maven-jar-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -92,6 +102,7 @@
         </plugins>
     </build>
 
+    <!-- 모듈 목록 -->
     <modules>
         <module>chapter-01</module>
         <module>chapter-02</module>
@@ -116,6 +127,7 @@
         <module>chapter-21</module>
     </modules>
 
+    <!-- 프로젝트 속성값 목록 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <built.by>lwjglgamedev</built.by>
@@ -134,7 +146,9 @@
         <tinylog.version>2.7.0</tinylog.version>
     </properties>
 
+    <!-- 프로필 목록 -->
     <profiles>
+        <!-- windows-profile -->
         <profile>
             <id>windows-profile</id>
             <activation>
@@ -146,6 +160,7 @@
                 <native.target>natives-windows</native.target>
             </properties>
         </profile>
+        <!-- linux-profile -->
         <profile>
             <id>linux-profile</id>
             <activation>
@@ -157,6 +172,7 @@
                 <native.target>natives-linux</native.target>
             </properties>
         </profile>
+        <!-- OSX-profile -->
         <profile>
             <id>OSX-profile</id>
             <activation>
