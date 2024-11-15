@@ -15,7 +15,7 @@ public class Main implements IAppLogic {
     private static final float MOUSE_SENSITIVITY = 0.1f;
     private static final float MOVEMENT_SPEED = 0.005f;
 
-    private Entity[][] terrainEntities;
+    //private Entity[][] terrainEntities;
 
     public static void main(String[] args) {
         Main main = new Main();

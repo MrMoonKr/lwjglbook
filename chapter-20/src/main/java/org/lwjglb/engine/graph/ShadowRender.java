@@ -93,13 +93,13 @@ public class ShadowRender {
                 continue;
             }
             List<Entity> entities = model.getEntitiesList();
-            for (RenderBuffers.MeshDrawData meshDrawData : model.getMeshDrawDataList()) {
+            //for (RenderBuffers.MeshDrawData meshDrawData : model.getMeshDrawDataList()) {
                 for (Entity entity : entities) {
                     String name = "drawElements[" + drawElement + "]";
                     uniformsMap.setUniform(name + ".modelMatrixIdx", entitiesIdxMap.get(entity.getId()));
                     drawElement++;
                 }
-            }
+            //}
         }
         glBindBuffer(GL_DRAW_INDIRECT_BUFFER, staticRenderBufferHandle);
         glBindVertexArray(renderBuffers.getStaticVaoId());

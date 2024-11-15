@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 부모 모듈 : org.lwjglb.book -->
     <parent>
         <groupId>org.lwjglb</groupId>
         <artifactId>book</artifactId>
@@ -10,10 +12,20 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
+    <!-- 자신 모듈 : org.lwjglb.chapter-18 -->
     <artifactId>chapter-18</artifactId>
     <version>1.0</version>
 
+    <!-- 모듈 속성값 목록 -->
+    <properties>
+        <main.class>org.lwjglb.game.Main</main.class>
+        
+    </properties>
+
+    <!-- 의존 모듈 목록 -->
     <dependencies>
+
+        <!-- tinylog -->
         <dependency>
             <groupId>org.tinylog</groupId>
             <artifactId>tinylog-api</artifactId>
@@ -24,48 +36,63 @@
             <artifactId>tinylog-impl</artifactId>
             <version>${tinylog.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.lwjgl</groupId>
-            <artifactId>lwjgl</artifactId>
-            <version>${lwjgl.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.lwjgl</groupId>
-            <artifactId>lwjgl-glfw</artifactId>
-            <version>${lwjgl.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.lwjgl</groupId>
-            <artifactId>lwjgl-opengl</artifactId>
-            <version>${lwjgl.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.lwjgl</groupId>
-            <artifactId>lwjgl-stb</artifactId>
-            <version>${lwjgl.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.lwjgl</groupId>
-            <artifactId>lwjgl-assimp</artifactId>
-            <version>${lwjgl.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.lwjgl</groupId>
-            <artifactId>lwjgl-openal</artifactId>
-            <version>${lwjgl.version}</version>
-        </dependency>
+
+        <!-- joml -->
         <dependency>
             <groupId>org.joml</groupId>
             <artifactId>joml</artifactId>
             <version>${joml.version}</version>
         </dependency>
+
+        <!-- lwjgl -->
+        <!-- org.lwjgl.lwjgl -->
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl</artifactId>
+            <version>${lwjgl.version}</version>
+        </dependency>
+        <!-- org.lwjgl.lwjgl-glfw -->
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-glfw</artifactId>
+            <version>${lwjgl.version}</version>
+        </dependency>
+        <!-- org.lwjgl.lwjgl-opengl -->
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-opengl</artifactId>
+            <version>${lwjgl.version}</version>
+        </dependency>
+        <!-- org.lwjgl.lwjgl-stb -->
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-stb</artifactId>
+            <version>${lwjgl.version}</version>
+        </dependency>
+        <!-- org.lwjgl.lwjgl-assimp -->
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-assimp</artifactId>
+            <version>${lwjgl.version}</version>
+        </dependency>
+        <!-- org.lwjgl.lwjgl-openal -->
+        <dependency>
+            <groupId>org.lwjgl</groupId>
+            <artifactId>lwjgl-openal</artifactId>
+            <version>${lwjgl.version}</version>
+        </dependency>
+
+
+        <!-- io.github.spair.imgui-java-binding -->
         <dependency>
             <groupId>io.github.spair</groupId>
             <artifactId>imgui-java-binding</artifactId>
             <version>${imgui-java.version}</version>
         </dependency>
 
-        <!-- Natives -->
+        <!-- runtime classifier -->
+
+        <!-- org.lwjgl.lwjgl -->
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl</artifactId>
@@ -73,6 +100,7 @@
             <classifier>${native.target}</classifier>
             <scope>runtime</scope>
         </dependency>
+        <!-- org.lwjgl.lwjgl-opengl -->
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl-opengl</artifactId>
@@ -80,6 +108,7 @@
             <classifier>${native.target}</classifier>
             <scope>runtime</scope>
         </dependency>
+        <!-- org.lwjgl.lwjgl-glfw -->
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl-glfw</artifactId>
@@ -87,13 +116,15 @@
             <classifier>${native.target}</classifier>
             <scope>runtime</scope>
         </dependency>
+        <!-- org.lwjgl.lwjgl-stb -->
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl-stb</artifactId>
             <version>${lwjgl.version}</version>
             <classifier>${native.target}</classifier>
-			<scope>runtime</scope>
+            <scope>runtime</scope>
         </dependency>
+        <!-- org.lwjgl.lwjgl-assimp -->
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl-assimp</artifactId>
@@ -101,6 +132,7 @@
             <classifier>${native.target}</classifier>
             <scope>runtime</scope>
         </dependency>
+        <!-- org.lwjgl.lwjgl-openal -->
         <dependency>
             <groupId>org.lwjgl</groupId>
             <artifactId>lwjgl-openal</artifactId>
@@ -108,11 +140,14 @@
             <classifier>${native.target}</classifier>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- io.github.spair.imgui-java-binding -->
         <dependency>
             <groupId>io.github.spair</groupId>
             <artifactId>imgui-java-${native.target}</artifactId>
             <version>${imgui-java.version}</version>
             <scope>runtime</scope>
         </dependency>
+
     </dependencies>
 </project>
