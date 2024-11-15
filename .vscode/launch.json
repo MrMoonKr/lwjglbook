@@ -29,7 +29,8 @@
             "name": "chapter-03",
             "request": "launch",
             "mainClass": "org.lwjglb.game.Main",
-            "projectName": "chapter-03"
+            "projectName": "chapter-03",
+            "cwd": "${workspaceFolder}/chapter-03"
         },
         {
             "type": "java",

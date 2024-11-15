@@ -21,6 +21,36 @@
         
     </properties>
 
+    <build>
+        <plugins>
+            <!-- exec-maven-plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec-maven-plugin.version}</version>
+                <!-- <configuration>
+                    <mainClass>${main.class}</mainClass>
+                    <workingDirectory>${project.build.outputDirectory}</workingDirectory>
+                </configuration> -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-classpath</argument>
+                        <classpath></classpath>
+                        <argument>${main.class}</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.tinylog</groupId>
