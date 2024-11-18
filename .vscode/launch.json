@@ -177,6 +177,14 @@
             "mainClass": "org.lwjglb.game.Main",
             "projectName": "chapter-21",
             "cwd": "${workspaceFolder}/chapter-21"
+        },
+        {
+            "type": "java",
+            "name": "chapter-22",
+            "request": "launch",
+            "mainClass": "org.lwjglb.Main",
+            "projectName": "chapter-22",
+            "cwd": "${workspaceFolder}/chapter-22"
         }
     ]
 }

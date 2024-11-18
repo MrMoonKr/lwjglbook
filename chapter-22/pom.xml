@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 부모 모듈 : org.lwjglb.book -->
+    <parent>
+        <groupId>org.lwjglb</groupId>
+        <artifactId>book</artifactId>
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <!-- 자신 모듈 : org.lwjglb.chapter-22 -->
+    <artifactId>chapter-22</artifactId>
+    <version>1.0</version>
+
+    <!-- 모듈 속성값 목록 -->
+    <properties>
+        <main.class>org.lwjglb.Main</main.class>
+        
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- exec-maven-plugin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec-maven-plugin.version}</version>
+                <!-- <configuration>
+                    <mainClass>${main.class}</mainClass>
+                    <workingDirectory>${project.build.outputDirectory}</workingDirectory>
+                </configuration> -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-classpath</argument>
+                        <classpath></classpath>
+                        <argument>${main.class}</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jogamp.gluegen</groupId>
+            <artifactId>gluegen-rt-main</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jogamp.jogl</groupId>
+            <artifactId>jogl-all-main</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>jogamp-remote</id>
+            <name>jogamp mirror</name>
+            <url>https://www.jogamp.org/deployment/maven/</url>
+        </repository>
+    </repositories>
+
+    
+
+</project>
