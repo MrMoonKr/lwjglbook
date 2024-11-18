@@ -28,8 +28,9 @@ public class HelloWorld {
         GLFWErrorCallback.createPrint( System.err ).set();
 
         // Initialize GLFW. Most GLFW functions will not work before doing this.
-        if ( !glfwInit() )
+        if ( !glfwInit() ) {
             throw new IllegalStateException( "Unable to initialize GLFW" );
+        }
 
         // Configure GLFW
         glfwDefaultWindowHints(); // optional, the current window hints are already the default
@@ -37,15 +38,26 @@ public class HelloWorld {
         glfwWindowHint( GLFW_RESIZABLE, GLFW_TRUE ); // the window will be resizable
 
         // Create the window
-        window = glfwCreateWindow( 300, 300, "Hello World!", NULL, NULL );
-        if ( window == NULL )
+        window = glfwCreateWindow( 800, 600, "Hello World!", NULL, NULL );
+        if ( window == NULL ) {
             throw new RuntimeException( "Failed to create the GLFW window" );
+        }
 
         // Setup a key callback. It will be called every time a key is pressed, repeated
         // or released.
         glfwSetKeyCallback( window, ( window, key, scancode, action, mods ) -> {
             if ( key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE )
                 glfwSetWindowShouldClose( window, true ); // We will detect this in the rendering loop
+        } );
+
+        // Setup a mouse button callback. It will be called every time a mouse button is released
+        glfwSetMouseButtonCallback( window, ( window, button, action, mods ) -> {
+            if ( button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE ) {
+                float r = ( float )Math.random();
+                float g = ( float )Math.random();
+                float b = ( float )Math.random();
+                glClearColor( r, g, b, 0.0f );
+            }
         } );
 
         // Get the thread stack and push a new frame
@@ -60,8 +72,9 @@ public class HelloWorld {
             GLFWVidMode vidmode = glfwGetVideoMode( glfwGetPrimaryMonitor() );
 
             // Center the window
-            glfwSetWindowPos( window, ( vidmode.width() - pWidth.get( 0 ) ) / 2,
-                    ( vidmode.height() - pHeight.get( 0 ) ) / 2 );
+            glfwSetWindowPos( window, 
+                ( vidmode.width()  - pWidth.get( 0 ) ) / 2,
+                ( vidmode.height() - pHeight.get( 0 ) ) / 2 );
         } // the stack frame is popped automatically
 
         // Make the OpenGL context current
@@ -82,11 +95,16 @@ public class HelloWorld {
         GL.createCapabilities();
 
         // Set the clear color
-        glClearColor( 1.0f, 0.0f, 0.0f, 0.0f );
+        //glClearColor( 0.3f, 0.4f, 0.3f, 0.0f );
+        float r = ( float )Math.random();
+        float g = ( float )Math.random();
+        float b = ( float )Math.random();
+        glClearColor( r, g, b, 0.0f );
 
         // Run the rendering loop until the user has attempted to close
         // the window or has pressed the ESCAPE key.
         while ( !glfwWindowShouldClose( window ) ) {
+
             glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ); // clear the framebuffer
 
             glfwSwapBuffers( window ); // swap the color buffers
@@ -97,19 +115,28 @@ public class HelloWorld {
         }
     }
 
+    private void term() {
+
+        glfwFreeCallbacks( window );
+        glfwDestroyWindow( window );
+
+        glfwTerminate();
+        glfwSetErrorCallback( null ).free();
+    }
+
+    /**
+     * The main game method.  
+     * init() -> loop() -> term()
+     */
     public void run() {
+
         System.out.println( "Hello LWJGL " + Version.getVersion() + "!" );
 
         init();
         loop();
+        term();
 
-        // Free the window callbacks and destroy the window
-        glfwFreeCallbacks( window );
-        glfwDestroyWindow( window );
-
-        // Terminate GLFW and free the error callback
-        glfwTerminate();
-        glfwSetErrorCallback( null ).free();
+        System.out.println( "Goodbye LWJGL " + Version.getVersion() + "!" );
     }
 
 }
